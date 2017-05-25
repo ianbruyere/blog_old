@@ -1,0 +1,7 @@
+ConnectionStub
+psycopg2
+slow
+GreenTestCase
+test_suite
+ConnectingTestCase
+unittest

@@ -1,0 +1,8 @@
+docker_ignore
+strings
+alerts
+flag_text
+iam_attributes
+git_ignore
+responses
+prompts

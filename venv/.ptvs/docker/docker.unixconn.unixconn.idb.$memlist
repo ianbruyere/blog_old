@@ -1,0 +1,9 @@
+UnixAdapter
+six
+requests
+urllib3
+socket
+httplib
+UnixHTTPConnectionPool
+UnixHTTPConnection
+RecentlyUsedContainer

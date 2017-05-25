@@ -1,0 +1,9 @@
+dedent
+DockerNotFoundGeneric
+ComposeFileNotFound
+absolute_import
+ConnectionErrorGeneric
+ConnectionErrorBoot2Docker
+DockerNotFoundUbuntu
+DockerNotFoundMac
+UserError

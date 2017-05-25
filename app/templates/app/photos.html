@@ -1,0 +1,21 @@
+{% extends 'app/layout.html' %}
+
+{% block content %}
+  <link rel="stylesheet" href="/static/app/content/photos.css" />
+  <h1>{{ title }}</h1>
+  <hr />
+  {% load static %}
+  {% for album in albums %}
+    {% for photo in photos %}
+      {% if photo.album == album %}
+   
+    <div class="gallery">
+          <a target="_self" href="{{album.get_absolute_url}}">
+            <img src="{{MEDIA_URL}}{{photo.image.url}}" alt="{{album.name}}" width="300" height="200" />
+          </a>
+        <div class="desc">{{album.description}}</div>
+    </div>
+      {% endif %}
+    {% endfor %} <!-- end of photo for --> 
+  {% endfor %} <!--end of album for-->
+{% endblock %}

@@ -1,0 +1,8 @@
+DEFAULT_URI_TEMPLATE
+EndpointResolver
+DEFAULT_SERVICE_DATA
+LOG
+logging
+BaseEndpointResolver
+NoRegionError
+re

@@ -1,0 +1,8 @@
+logger
+copy
+Config
+ClientArgsCreator
+logging
+RequestSigner
+EndpointCreator
+botocore

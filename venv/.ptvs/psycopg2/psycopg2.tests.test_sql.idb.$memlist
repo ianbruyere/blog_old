@@ -1,0 +1,14 @@
+skip_before_python
+psycopg2
+ComposedTest
+test_suite
+SqlFormatTests
+LiteralTests
+IdentifierTests
+ConnectingTestCase
+SQLTests
+sql
+PlaceholderTest
+dt
+ValuesTest
+unittest

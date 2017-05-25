@@ -1,0 +1,5 @@
+aws
+get_template
+minimal_logger
+LOG
+_make_api_call

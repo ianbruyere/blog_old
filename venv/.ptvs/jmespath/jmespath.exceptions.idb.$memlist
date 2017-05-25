@@ -1,0 +1,10 @@
+UnknownFunctionError
+ParseError
+LexerError
+JMESPathTypeError
+VariadictArityError
+IncompleteExpressionError
+EmptyExpressionError
+ArityError
+with_str_method
+JMESPathError

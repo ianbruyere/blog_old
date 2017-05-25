@@ -1,0 +1,10 @@
+SpecField
+models
+unicode_literals
+_
+south
+VersionField
+SemVerField
+add_south_rules
+BaseSemVerField
+base

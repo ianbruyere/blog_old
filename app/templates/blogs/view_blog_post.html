@@ -1,0 +1,8 @@
+{% extends 'app/layout.html' %}
+
+{% block content %}
+<h1>{{post.title }}</h1>
+    {{ post.body }}
+<br />
+<h3>Category: <a href="{{ category.get_absolute_url }}">{{category.title}}</a></h3>
+{% endblock %}

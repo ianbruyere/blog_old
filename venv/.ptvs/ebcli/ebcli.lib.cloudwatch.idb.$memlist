@@ -1,0 +1,5 @@
+describe_log_streams
+get_all_stream_names
+_make_api_call
+aws
+get_log_events

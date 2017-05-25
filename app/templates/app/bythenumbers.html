@@ -1,0 +1,115 @@
+{% extends 'app/layout.html' %}
+{% block content %}
+<link rel="stylesheet" href="/static/app/content/bythenumbers.css" />
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Cost')">Cost</button>
+    <button class="tablinks" onclick="openTab(event, 'Miles')">Miles Traveled</button>
+    <button class="tablinks" onclick="openTab(event, 'Climbs')">Climbs</button>
+    <button class="tablinks" onclick="openTab(event, 'Hiked')">Hiking</button>
+</div>
+
+<!-- here is where the money breakdown will begin -->
+<div id="Cost" class="tabcontent">
+  <label>Total Cost:</label><p id="overallCost"></p>
+    <!-- these are where all the categories will go, i want them side by side, or possibly 2x2 -->
+  <div id="totalCategoreyContainer" style="display: flex" >
+    <div class="totalCategoryCost"><label>Gas:</label><p id="costGas"></p></div>
+    <div class="totalCategoryCost"><label>Camping:</label><p id="costCamping"></p></div>
+    <div class="totalCategoryCost"><label>Food:</label><p id="costFood"></p></div>
+    <div class="totalCategoryCost"><label>Entertainment:</label><p id="costEntertainment"></p></div>
+    <div class="totalCategoryCost"><label>Miscellaneous:</label><p id="costMisc"></p></div>
+  </div>
+
+  <!-- filter items should go here, basically category or state -->
+  <!-- obviously state should be a drop down of some sort but should only contain places I have actually been -->
+  <!-- not sure how I want it to display yet, some ideas are basically a tool box containing the fiter items or keep
+      the horizontal theme running and just have them in a bar under the categories-->
+   <div id="containerFilter">
+       <label>Filter By State:<select id="ddlState" onchange="filterByState()">
+           <option></option>
+       </select></label>
+   </div>
+    <!-- here is where the list items will be displayed based off of filter values -->
+    <div id="containerListItems">
+        <table style="width:100%" id="tableCost">
+            <thead>
+                <tr>
+                <th>Cost</th>
+                <th>Category</th>
+                <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- handled by the javascript with data provided by backend-->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- here is where mileage breakdown will begin-->
+<div id="Miles" class="tabcontent">
+    <h1 id="totalMileage"></h1>
+    <div id="containerMileageTable">
+        <table style="width:100%" id="tableMileage">
+            <thead>
+                <tr>
+                    <th>Miles Traveled</th>
+                    <th>Check-In Point</th>
+                    <th>State</th>
+                    <th>Check-In Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  handled by Javascript through data provided by backend -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="Climbs" class="tabcontent">
+    <div id="containerClimbsTable">
+        <table style="width:100%" id="tableClimbs">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Area</th>
+                    <th>Grade(YDS)</th>
+                    <th>Send?</th>
+                    <th>Date</th>
+                    <th>Belayer</th>
+                    <th>The Spew</th>
+                </tr>
+             </thead>
+            <tbody>
+                <!-- handled by JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="Hiked" class="tabcontent">
+    <div id="containerHikeTable">
+        <table style="width:100%" id="tableClimbs">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Miles Hiked</th>
+                    <th>Time</th>
+                    <th>Terrain</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- handled by JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="/static/app/scripts/jquery-1.10.2.js"></script>
+<script>var costData = '{{ money|escapejs }}'
+        var distanceData = JSON.parse('{{distance|escapejs}}')
+        var climbData = JSON.parse('{{climbs|escapejs}}')
+        var hikeData = JSON.parse('{{hikes|escapejs}}')</script>
+<script src="/static/app/scripts/bythenumbers.js"></script>
+
+{% endblock %}

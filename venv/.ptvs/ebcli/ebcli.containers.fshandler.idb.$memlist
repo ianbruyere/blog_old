@@ -1,0 +1,17 @@
+LocalState
+s3
+docker_ignore
+dockerrun
+EnvvarCollector
+os
+_require_append_dockerignore
+ContainerFSHandler
+containerops
+fileoperations
+_append_dockerignore
+compose
+log
+yaml
+shutil
+MultiContainerFSHandler
+commands

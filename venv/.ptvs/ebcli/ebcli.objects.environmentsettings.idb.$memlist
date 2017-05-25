@@ -1,0 +1,10 @@
+ConversionConfiguration
+CLOUDFORMATION_TEMPLATE
+DATABASE_NAMESPACE
+_get_option_setting_dict
+InvalidSyntaxError
+ENVIRONMENT_VAR_NAMESPACE
+prompts
+six
+EnvironmentSettings
+_get_namespace_and_resource_name
