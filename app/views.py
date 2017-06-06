@@ -43,7 +43,7 @@ def home(request):
 def view_blog_post(request, slug):
     blogPost = get_object_or_404(BlogPost, slug=slug)
     return render(request,
-                  'blogs/view_blog_post.html', 
+                  'blogs/view_blog_post.html',
           {
            'post' : blogPost,
            'category' : Category.objects.filter(id=blogPost.category.id)
@@ -61,7 +61,7 @@ def view_album(request, slug):
     album = get_object_or_404(Album, slug=slug)
 
     return render(request,
-                  'albums/view_album.html', {
+                  'Albums/view_album.html', {
                   'album' : album,
                   'photos' :  Photo.objects.filter(album=album),
         })
@@ -97,9 +97,9 @@ def tripoutline(request):
     if request.method == 'POST':
         mapMarkersForm = MapMarkersForm(request.POST)
         if mapMarkersForm.is_valid():
-            markers = mapMarkersForm.save()          
+            markers = mapMarkersForm.save()
             # process the data in form.cleaned_data as required
-            
+
             return HttpResponseRedirect('tripoutline')
     # if GET or other method return a blank form
     else:
@@ -107,7 +107,7 @@ def tripoutline(request):
     from app.models import MapMarker
     """Renders the trip outline page"""
     assert isinstance(request, HttpRequest)
-    
+
     # this lets me separate the javascript out to its own file
     markers_json = serializers.serialize('json', MapMarker.objects.all())
     return render(
@@ -120,7 +120,7 @@ def tripoutline(request):
          'markers_json' : markers_json,
          'mapMarkersForm' : mapMarkersForm
          }
-         
+
      )
 
 def bythenumbers(request):
@@ -154,7 +154,7 @@ def photos(request):
             }
         )
 
-                       
+
 
 
 

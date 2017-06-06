@@ -35,10 +35,11 @@ function populateAllListItems() {
         // to the unordered list and set the class as the categorey of the data
         // eg class="Gas" if the category is gas eventually need multiple columns
         var cost = buildTableColumn(cost_json[i].fields.cost);
+        var itemPurchased = buildTableColumn(cost_json[i].fields.itemPurchased);
         var category = buildTableColumn(cost_json[i].fields.category);
         var state = buildTableColumn(cost_json[i].fields.state);
         $('#tableCost tbody').append('<tr class="' + cost_json[i].fields.category + ' ' + cost_json[i].fields.state + '">'
-            + cost + category + state + '</tr>')
+            + cost + +itemPurchased + category + state + '</tr>')
         $('#ddlState').append('<option>' + state + '</option>');
     }
 }
@@ -116,7 +117,7 @@ function clearListCostItems() {
 
 function buildTableColumn(value) {
     // helps cut down on difficulty reading
-    return '<td>' + value + '</td>'; 
+    return '<td>' + value + '</td>';
 }
 
 // might want to bump this up so as not to be page specific

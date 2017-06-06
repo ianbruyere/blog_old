@@ -13,7 +13,7 @@ class User(AbstractUser):
     is_authorized = models.BooleanField(default=False)
 
 class MapMarker(models.Model):
-    name = models.CharField(max_length=60) 
+    name = models.CharField(max_length=60)
     address = models.CharField(max_length=80, default=None)
     lat = models.DecimalField(max_digits=10, decimal_places=6, default=None)
     lng = models.DecimalField(max_digits=10, decimal_places=6, default=None )
@@ -25,16 +25,20 @@ class MapMarker(models.Model):
     date = models.DateField(default=None, null=True)
     alreadyVisited = models.BooleanField(default=False)
 
+    def __str__(self):
+        return 'MapMarker: {}'.format(self.name)
+
 # keeps track of how the trip has cost me and what categories it falls in
 class Cost(models.Model):
     cost = models.DecimalField(max_digits=10, decimal_places=2)
-    category = models.CharField(max_length=40, choices=(('Gas', 'Gas'), ('Food', 'Food'), ('Entertainment', 'Entertainment'), ('Misc', 'Misc'), ('Camping', 'Camping')), default='Climbing')
+    itemPurchased = models.CharField(max_length=100, default='Food')
+    category = models.CharField(max_length=40, choices=(('Gas', 'Gas'), ('Food', 'Food'), ('Entertainment', 'Entertainment'), ('Misc', 'Misc'), ('Camping', 'Camping'), ('Hiking', 'Hiking')), default='Climbing')
     state = models.CharField(max_length=2)
     city = models.CharField(max_length=40)
     month = models.CharField(max_length=40, default='May')
 
 ## this will keep track of how many miles I have gone, by what point, and at what time
-## maybe eventually have something that says how long it has been since I have been on the road 
+## maybe eventually have something that says how long it has been since I have been on the road
 ## in days and whatnot
 class DistanceDriven(models.Model):
     cumulativeMilesTraveled = models.DecimalField(max_digits=12, decimal_places=2)
@@ -49,7 +53,7 @@ class Route(models.Model):
     sendStatus = models.CharField(max_length=100) # this can also be number of attempts
     date = models.DateField()
     belayer = models.CharField(max_length=100) # belayer at time of send
-    betaSpew = models.TextField() # anythin I want to say, form how well liked the route was to actual beta 
+    betaSpew = models.TextField() # anythin I want to say, form how well liked the route was to actual beta
                                   # though beta should probably be hidden by spoilers
 class Hiking(models.Model):
     name = models.CharField(max_length=60)
@@ -72,6 +76,9 @@ class Album(models.Model):
     def get_absolute_url(self):
          return ('view_album', None, {'slug' : self.slug})
 
+    def __str__(self):
+        return 'Album: {}'.format(self.name)
+
 class Photo(models.Model):
     title = models.CharField(max_length=256)
     summary = models.TextField(blank=True, null=True)
@@ -82,6 +89,9 @@ class Photo(models.Model):
     is_cover_photo = models.BooleanField()
     # credit = models.CharField(max_length=120, default=None)
 
+    def __str__(self):
+        return 'Photo: {}'.format(self.title)
+
 
 class BlogPost(models.Model):
      title = models.CharField(max_length=250, unique=True)
@@ -90,12 +100,19 @@ class BlogPost(models.Model):
      datePosted = models.DateField(db_index=True, auto_now_add=True)
      category = models.ForeignKey('Category')
 
+     def __str__(self):
+         return 'BlogPost: {}'.format(self.title)
+
      def __unicode__(self):
          return '%s' % self.title
 
      @permalink
      def get_absolute_url(self):
          return ('view_blog_post', None, {'slug' : self.slug})
+
+
+
+
 
 class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
@@ -107,5 +124,8 @@ class Category(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('view_blog_category', None, {'slug' : self.slug})
+
+    def __str__(self):
+        return 'Category: {}'.format(self.title)
 
 

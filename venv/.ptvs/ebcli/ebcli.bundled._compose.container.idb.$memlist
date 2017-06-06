@@ -1,6 +1,0 @@
-absolute_import
-get_container_name
-reduce
-unicode_literals
-Container
-six

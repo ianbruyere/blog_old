@@ -1,3 +1,0 @@
-apply_patches
-parsers
-fix_botocore_to_pass_response_date

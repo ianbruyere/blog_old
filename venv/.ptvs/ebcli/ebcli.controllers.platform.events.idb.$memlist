@@ -1,7 +1,0 @@
-show_platform_events
-EBPEventsController
-strings
-flag_text
-GenericPlatformEventsController
-PlatformEventsController
-AbstractBaseController

@@ -1,8 +1,13 @@
 {% extends 'app/layout.html' %}
 
 {% block content %}
+
 <h1>{{post.title }}</h1>
-    {{ post.body }}
+<div id="postBody">
+{% autoescape off %}
+    <p>{{ post.body }}</p>
+{% endautoescape %}
+</div>
 <br />
 <h3>Category: <a href="{{ category.get_absolute_url }}">{{category.title}}</a></h3>
 {% endblock %}

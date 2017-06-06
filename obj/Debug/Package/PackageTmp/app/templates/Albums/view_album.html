@@ -1,0 +1,14 @@
+{% extends 'app/layout.html' %}
+
+{% block content %}
+  <link rel="stylesheet" href="/static/app/content/photos.css" />
+  <h1>{{ album.name }}</h1>
+  {% for photo in photos %}
+    <div class="gallery">
+          <a target="_blank" href="{{MEDIA_URL}}{{photo.image.url}}">
+            <img src="{{MEDIA_URL}}{{photo.image.url}}" alt="photo.title" width="300" height="200" />
+          </a>
+        <div class="desc">{{ photo.summary }}</div>
+    </div>
+  {% endfor %}
+{% endblock %}

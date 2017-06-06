@@ -1,9 +1,0 @@
-getdoc
-docopt
-absolute_import
-unicode_literals
-docopt_full_help
-DocoptExit
-NoSuchCommand
-DocoptCommand
-sys
