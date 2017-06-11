@@ -51,6 +51,7 @@
     <Compile Include="personalWebsite\admin.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="personalWebsite\productionSettings.py" />
     <Compile Include="personalWebsite\__init__.py" />
     <Compile Include="personalWebsite\settings.py" />
     <Compile Include="personalWebsite\urls.py" />
