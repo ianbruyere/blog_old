@@ -9,10 +9,14 @@
          <div class="box">
              <a href="{{ post.get_absolute_url }}"> 
              <div class="postInfoHover">
+
                <div class="postTitle">{{post.title}}</div>
                <div class="postDate">{{post.datePosted}}</div> 
+
             </div>
+                 {% autoescape off %}
                <p class="postBody">{{ post.body|truncatechars:175 }}</p>
+                 {% endautoescape %}
              </a>
          </div>
     

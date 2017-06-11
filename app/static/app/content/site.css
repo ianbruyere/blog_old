@@ -76,11 +76,16 @@ ul.topnav li {
 	float: left;
 }
 
-#postBody {
-    width:800px;
-    margin: 0px 50px;
-    position: absolute;
-    left: 33%;
+.post_flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_flex_item {
+    flex: 1 1 800px;
+    max-width: 50%;
 }
 
 ul.topnav li a {
