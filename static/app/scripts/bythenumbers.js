@@ -1,6 +1,8 @@
 $(document).ready(function () {
     populateAllListItems();
     populateAllMileageListItems()
+    populateAllClimbs();
+    populateAllHikes();
     totalCostOfSelected();
 });
 
@@ -33,14 +35,43 @@ function populateAllListItems() {
         // to the unordered list and set the class as the categorey of the data
         // eg class="Gas" if the category is gas eventually need multiple columns
         var cost = buildTableColumn(cost_json[i].fields.cost);
+        var itemPurchased = buildTableColumn(cost_json[i].fields.itemPurchased);
         var category = buildTableColumn(cost_json[i].fields.category);
         var state = buildTableColumn(cost_json[i].fields.state);
         $('#tableCost tbody').append('<tr class="' + cost_json[i].fields.category + ' ' + cost_json[i].fields.state + '">'
-            + cost + category + state + '</tr>')
+            + cost + +itemPurchased + category + state + '</tr>')
         $('#ddlState').append('<option>' + state + '</option>');
     }
 }
 
+function populateAllClimbs() {
+    for (var i = 0; i < climbData.length; i++) {
+        var name, area, grade, send, date, belayer, spew
+        name = buildTableColumn(climbData[i].fields.name);
+        area = buildTableColumn(climbData[i].fields.location);
+        grade = buildTableColumn(climbData[i].fields.grade);
+        send = buildTableColumn(climbData[i].fields.send)
+        date = buildTableColumn(climbData[i].fields.date)
+        belayer = buildTableColumn(climbData[i].fields.belayer)
+        spew = buildTableColumn(climbData[i].fields.betaSpew)
+        $('#tableClimbs tbody').append('<tr class="' + climbData[i].fields.area + '">' + name + area + grade +
+            send + date + belayer + spew + '</tr>')
+    }
+}
+
+function populateAllHikes() {
+    for (var i = 0; i < hikeData.length; i++) {
+        var name, location, milesHiked, time, terrain, jsonData
+        jsonData = hikeData[i].fields
+        name = buildTableColumn(jsonData.name);
+        location = jsonData.location
+        milesHiked = jsonData.distanceData
+        time = jsonData.numberOfDays
+        terrain = jsonData.typeOfTerrain
+        $('#tableHikes tbody').append('<tr class="' + jsonData.location + '">' + name +
+            location + milesHiked + time + terrain + '</tr>')
+    }
+}
 function totalCostOfSelected() {
     // this function will tally up the dollar amount of every
     // single item listed below
@@ -52,14 +83,11 @@ function filterByState() {
     unHideTableRows('#tableCost')
     var selectedState = $('#ddlState').find(':selected').text()
     $('#tableCost tbody').find('tr').each(function () {
-        
         if (!$(this).hasClass(selectedState) && selectedState != '') {
             this.hidden = true;
         }
     })
-
     totalCostOfSelected();
-
 }
 
 function unHideTableRows(tableid) {
@@ -89,7 +117,7 @@ function clearListCostItems() {
 
 function buildTableColumn(value) {
     // helps cut down on difficulty reading
-    return '<td>' + value + '</td>'; 
+    return '<td>' + value + '</td>';
 }
 
 // might want to bump this up so as not to be page specific

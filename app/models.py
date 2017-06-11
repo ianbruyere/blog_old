@@ -96,7 +96,7 @@ class Photo(models.Model):
 class BlogPost(models.Model):
      title = models.CharField(max_length=250, unique=True)
      slug = models.SlugField(max_length=100, unique=True)
-     body = models.TextField() # need to change charfield type to longtext equiv
+     body = models.TextField() 
      datePosted = models.DateField(db_index=True, auto_now_add=True)
      category = models.ForeignKey('Category')
 

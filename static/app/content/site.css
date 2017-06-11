@@ -1,71 +1,115 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px; 
+﻿html {
+	height: 100%;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    /*padding-left: 15px;
-    padding-right: 15px; */
+.flex_container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
 }
+
+.box {
+	background-color: grey;
+	margin: 10px;
+	font-size: 16px;
+	text-align: center;
+	padding:10px;
+	opacity: .4;
+	flex: 1 1 calc(33.33% - 20px);
+}
+
+ul.topnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	z-index: 9999;
+}
+
+ul.topnav li {
+	float: left;
+}
+
+ul.topnav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+	background-color: #111;
+}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+	ul.topnav li.right, 
+	ul.topnav li {float: none;}
+}
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom;
+}
+
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+	max-width: 280px;
 }
 
 /* styles for validation helpers */
 .field-validation-error {
-    color: #b94a48;
+	color: #b94a48;
 }
 
 .field-validation-valid {
-    display: none;
+	display: none;
 }
 
 input.input-validation-error {
-    border: 1px solid #b94a48;
+	border: 1px solid #b94a48;
 }
 
 input[type="checkbox"].input-validation-error {
-    border: 0 none;
+	border: 0 none;
 }
 
 .validation-summary-errors {
-    color: #b94a48;
+	color: #b94a48;
 }
 
 .validation-summary-valid {
-    display: none;
+	display: none;
 }
 #container_tracker{
-    position: relative;
+	position: relative;
 }
 #moneySpent {
-    position:absolute;
-    left:0px;
+	position:absolute;
+	left:0px;
 }
 
 #moneySpent > p > a {
-    color: green;
-    font-size: 40px;
-    text-decoration: none;
+	color: green;
+	font-size: 40px;
+	text-decoration: none;
 }
 
 #milesTraveled {
-    position:absolute;
-    right:0px;
-    
-
+	position:absolute;
+	right:0px;
 }
 
 #milesTraveled > p {
-    color: rgb(255, 153, 0);
-    font-size: 40px
+	color: rgb(255, 153, 0);
+	font-size: 40px
 }
 
-.spacer {
-    clear:both;
-}

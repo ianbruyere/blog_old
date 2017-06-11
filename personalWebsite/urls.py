@@ -39,6 +39,7 @@ urlpatterns = [
             'next_page': '/',
         },
         name='logout'),
+    url(r'^blogs/$',app.views.blogMainPage, name='blog' ),
     url(r'^bythenumbers/', app.views.bythenumbers, name='bythenumbers'),
     url(r'^signup', app.views.signup, name='signup'),
     url(r'^photos', app.views.photos, name='photos'),

@@ -40,6 +40,14 @@ def home(request):
         }
     )
 
+def blogMainPage(request):
+    return render(request, 
+                  'blogs/blogMainPage.html',
+                  {
+                      'posts' : BlogPost.objects.all()
+                  }
+                )
+
 def view_blog_post(request, slug):
     blogPost = get_object_or_404(BlogPost, slug=slug)
     return render(request,

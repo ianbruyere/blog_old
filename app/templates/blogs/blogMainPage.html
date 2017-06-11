@@ -1,0 +1,26 @@
+﻿{% extends 'app/layout.html' %}
+
+{% block content %}
+
+{% if posts %}
+<div class="flex_container">
+      {% for post in posts %}
+    
+         <div class="box">
+             <a href="{{ post.get_absolute_url }}"> 
+             <div class="postInfoHover">
+               <div class="postTitle">{{post.title}}</div>
+               <div class="postDate">{{post.datePosted}}</div> 
+            </div>
+               <p class="postBody">{{ post.body|truncatechars:175 }}</p>
+             </a>
+             <div class="tags">{{post.category| }}</div>
+         </div>
+    
+      {% endfor %}
+    </div>
+{% else %}
+  <p>There are no posts.</p>
+{% endif %}
+
+{% endblock %}

@@ -107,6 +107,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="app\templates\app\tripoutline.html" />
+    <Content Include="app\templates\blogs\blogMainPage.html" />
     <Content Include="app\templates\blogs\view_blog_post.html">
       <SubType>Code</SubType>
     </Content>

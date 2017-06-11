@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
     initMap();
 });
 
@@ -8,7 +8,7 @@ function openTab(evt) {
     var tabName = document.getElementById('ddlOptions').value
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
-    for(i = 0; i < tabcontent.length; i++) {
+    for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
@@ -48,11 +48,11 @@ function initMap() {
     // Create a new blank array for all the listings markers.
     var marker_objects = [];
     // Constructor creates a new map - only center and zoom are required.
-   var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 41.157557, lng: -81.242047 }, // 41.157557,-81.242047
         zoom: 5,
         //mapTypeControl: false
-   });
+    });
     // because apparently sending it with the escapejs wasn't enough
     // to use it right away have to parse the JSON data into a usable formate?!?! wtf
     // will do analysis late ron speed just out of pure curiousity
@@ -63,49 +63,87 @@ function initMap() {
     // est. time to implement this and get it working ~1.5 hours
     // pointsData = {};
     var pointsData = JSON.parse(points);
+    var markerColor
+    var directionsService = new google.maps.DirectionsService();
+    var directionDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
+    directionDisplay.setMap(map);
+    // var collLatsLng = []
+    var waypoints = [];
+    for (var i = 0; i < pointsData.length; i++) {
 
-   for (var i = 0; i < pointsData.length ; i++) {
+        var myLatLng = new google.maps.LatLng(pointsData[i].fields.lat, pointsData[i].fields.lng);
+        if (pointsData[i].fields.alreadyVisited) {
+            markerColor = 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        } else if (pointsData[i].fields.confirmed) {
+            markerColor = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+        } else { markerColor = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png' }
 
-               var myLatLng = new google.maps.LatLng(pointsData[i].fields.lat, pointsData[i].fields.lng);
-              // var content = 
+        marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: pointsData[i].fields.name,
+            // label: pointsData[i].fields.orderVisiting,
+            icon: markerColor
+        });
 
-               var markerColor = pointsData[i].fields.confirmed ? 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' : 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+        var infowindow = new google.maps.InfoWindow;
+        google.maps.event.addListener(marker, "click", (function (marker, i) {
+            return function (evt) {
+                var content = '<h1 class="firstHeading">' + marker.title + '</h1> <br />' +
+                              '<h3 class="secondHeading">Est. Date: ' + pointsData[i].fields.date + '</h2><br />' +
+                              '<h3 class="secondHeading">The Plan</h2>' + '<p>' +
+                                pointsData[i].fields.description + '</p>';
+                infowindow.setContent(content);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+        marker_objects.push(marker);
 
-               marker = new google.maps.Marker({
-                   position: myLatLng,
-                   map: map,
-                   title: pointsData[i].fields.name,
-                  // label: pointsData[i].fields.orderVisiting,
-                   icon: markerColor
-               });
+        if (pointsData[i].fields.confirmed) {
+            waypoints.push({ location: myLatLng })
+        };
 
-              // infowindow.setContent(content);
-              //initInfoWindow(marker, infowindow);
-               var infowindow = new google.maps.InfoWindow;
-               google.maps.event.addListener(marker, "click", (function (marker, i) {
-                   return function (evt) {
-                       var content = '<h1 class="firstHeading">' + marker.title + '</h1> <br />' +
-                                     '<h3 class="secondHeading">Est. Date: ' + pointsData[i].fields.date + '</h2><br />' +
-                                     '<h3 class="secondHeading">The Plan</h2>' + '<p>' +
-                                       pointsData[i].fields.description + '</p>';
-                       infowindow.setContent(content);
-                       infowindow.open(map, marker);
-                   }
-               })(marker, i));
-               marker_objects.push(marker);
-       } // end of points loop
+    } // end of points loop
+
+    if (waypoints !== []) {
+        var originAddress = 'Ravenna, OH 44266'
+        var destinationAddress = 'Lake Tahoe, CA'
+        // var request = {
+        // origin: originAddress,
+        // destination: destinationAddress,
+        // waypoints: waypoints,
+        // travelMode: google.maps.DirectionsTravelMode.DRIVING
+
+
+        directionsService.route({
+            origin: originAddress,
+            destination: destinationAddress,
+            waypoints: waypoints,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+        }, function (response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+            } else {
+                // error handling
+            }
+        });
+    }
+
+
 
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
 
-    document.getElementById('submit').addEventListener('click', function() {
+    document.getElementById('submit').addEventListener('click', function () {
         geocodeAddress(map);
     });
 
-    document.getElementById('#pac-input').addEventListener('onblur', function () {
-        geocodeAddress(map);
-    })
+
+
+    //document.getElementById('#pac-input').addEventListener('onblur', function () {
+    //    geocodeAddress(map);
+    //})
 
 
 } // end of init map
@@ -119,4 +157,4 @@ function initInfoWindow(marker, infowindow) {
 }
 
 
-    
+
