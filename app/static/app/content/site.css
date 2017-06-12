@@ -10,45 +10,6 @@ html {
 	height: 100%;
 }
 
-.flex_container {
-	display: flex;
-	flex-wrap: wrap;
-	background-image: linear-gradient(260deg, darkgrey 0%, lightgrey 100%);
-}
-
-.box {
-	background:rgba(255,255,255,0.2);
-	margin: 10px;
-	font-size: 30px;
-	color: black;
-	text-align: center;
-	padding:10px;
-	flex: 1 1 calc(25% - 20px);
-}
-
-.box > a {
-	color: black;
-	text-decoration: none;
-}
-
-.box:hover .postInfoHover {
-	opacity: 1;
-	display: flex;
-	flex-wrap: wrap;
-	
-}
-
- .box:hover .postInfoHover > div {
-	 flex: 1;
-	}
-
-.postInfoHover {
-	display: none;
-	opacity: 0;
-	transition: .5s;
-	text-align: left;
-	
-}
 
 .view {
     position: absolute;
@@ -56,10 +17,6 @@ html {
     bottom: 0;
     background-color: gray;
     width: 100%;
-}
-.box:hover .postBody {
-	opacity: .4;
-	transition: .5s;
 }
 
 
@@ -76,17 +33,7 @@ ul.topnav li {
 	float: left;
 }
 
-.post_flex_container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
 
-.post_flex_item {
-    flex: 1 1 800px;
-    max-width: 50%;
-}
 
 ul.topnav li a {
 	display: block;
@@ -170,3 +117,90 @@ input[type="checkbox"].input-validation-error {
 	font-size: 40px
 }
 
+/*Index Page Main display Info*/
+.indexFlexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#photoBillboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.image-slide {
+    width: 80vh;
+    margin: 10vh;
+    position: relative;
+    max-width: 75%;
+}
+
+.image-container {
+    position:relative;
+}
+
+.display-left {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+}
+
+.display-right {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+}
+
+/*Blog Post Selection Display: How they are displayed to be selected*/
+
+.blogMain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blogEntry {
+    background-color: white;
+    flex: 0 1 calc(25% - 20px);
+    margin: 20px 10px 20px 10px;
+   
+}
+
+.metaInfo {
+    font-size: 12px;
+}
+
+.blogEntryHeader {
+    font-size: 24px;
+}
+
+.blogEntryHeader > a {
+    color:black;
+    text-decoration: none;
+}
+
+.blogEntryHeader > a:hover {
+    transition: .5s;
+    opacity: .6;
+}
+.entry-content {
+    font-size: 16px;
+}
+
+.read-more-link {
+    color: red;
+}
+
+/*How the Actual Blog Post Is Displayed when selected for reading*/
+.post_flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_flex_item {
+    flex: 1 1 800px;
+    max-width: 50%;
+}

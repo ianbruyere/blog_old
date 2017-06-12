@@ -35,8 +35,8 @@ def home(request):
         {
             'title':'Home Page',
             'year':datetime.now().year,
-            'categories': Category.objects.all(),
-            'posts' : BlogPost.objects.all()[:5]
+            'images': Photo.objects.filter(is_cover_photo=True).order_by('date_created')[:4],
+            'posts' : BlogPost.objects.all()[:8]
         }
     )
 
