@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 
 import app.forms
 import app.views
+import photoEngine.views
 
 # Uncomment the next lines to enable the admin:
 from django.contrib import admin
@@ -42,7 +43,6 @@ urlpatterns = [
     url(r'^blogs/$',app.views.blogMainPage, name='blog' ),
     url(r'^bythenumbers/', app.views.bythenumbers, name='bythenumbers'),
     url(r'^signup', app.views.signup, name='signup'),
-    url(r'^photos', app.views.photos, name='photos'),
     url(r'^blogs/(?P<slug>[^\.]+)',
         app.views.view_blog_post,
         name='view_blog_post'),
@@ -52,9 +52,11 @@ urlpatterns = [
         name='view_blog_category'
         ),
     url(r'^album/(?P<slug>[^\.]+).html',
-        app.views.view_album,
+        photoEngine.views.view_album,
         name='view_album'
         ),
+        url(r'^photos', photoEngine.views.photos, name='photos'),
+
         
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

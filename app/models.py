@@ -62,36 +62,6 @@ class Hiking(models.Model):
     numberOfDays = models.IntegerField()
     typeOfTerrain = models.CharField(max_length=60, choices=(('Hilly', 'Hilly'), ('Flat', 'Flat'), ('Mixed', 'Mixed')))
 
-class Album(models.Model):
-    name = models.CharField(max_length=128)
-    slug = models.SlugField()
-    summary = models.TextField()
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_modified = models.DateTimeField(auto_now=True)
-
-    def __unicode__(self):
-         return '%s' % self.title
-
-    @permalink
-    def get_absolute_url(self):
-         return ('view_album', None, {'slug' : self.slug})
-
-    def __str__(self):
-        return 'Album: {}'.format(self.name)
-
-class Photo(models.Model):
-    title = models.CharField(max_length=256)
-    summary = models.TextField(blank=True, null=True)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_modified = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='photos/%Y/%m')
-    album = models.ForeignKey(Album)
-    is_cover_photo = models.BooleanField()
-    # credit = models.CharField(max_length=120, default=None)
-
-    def __str__(self):
-        return 'Photo: {}'.format(self.title)
-
 
 class BlogPost(models.Model):
      title = models.CharField(max_length=250, unique=True)

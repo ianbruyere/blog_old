@@ -12,8 +12,6 @@ class BlogAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('title')}
 
-admin.site.register(Photo)
-admin.site.register(Album)
 admin.site.register(MapMarker)
 admin.site.register(Cost)
 admin.site.register(DistanceDriven)

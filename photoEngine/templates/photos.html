@@ -6,16 +6,10 @@
   <hr />
   {% load static %}
   {% for album in albums %}
-    {% for photo in photos %}
-      {% if photo.album == album %}
-
     <div class="gallery">
           <a target="_self" href="{{album.get_absolute_url}}">
-            <img src="{{MEDIA_URL}}{{photo.image.url}}" alt="{{album.name}}" width="300" height="200" />
+             <div class="desc">{{album.title}}</div>
           </a>
-        <div class="desc">{{album.name}}</div>
     </div>
-      {% endif %}
-    {% endfor %} <!-- end of photo for -->
   {% endfor %} <!--end of album for-->
 {% endblock %}

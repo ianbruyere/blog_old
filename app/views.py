@@ -12,7 +12,8 @@ from django.http.response import HttpResponseRedirect
 import json
 from django.core import serializers
 from django.views.generic import list
-from app.models import BlogPost, Category, Album, Photo
+from app.models import BlogPost, Category
+from photoEngine.models import Photo, Album
 
 def signup(request):
     if request.method == 'POST':
@@ -35,7 +36,7 @@ def home(request):
         {
             'title':'Home Page',
             'year':datetime.now().year,
-            'images': Photo.objects.filter(is_cover_photo=True).order_by('date_created')[:4],
+            'images': Photo.objects.filter(is_cover_photo=True).order_by('date_added')[:4],
             'posts' : BlogPost.objects.all()[:8]
         }
     )
@@ -65,14 +66,6 @@ def view_category(request, slug):
         'posts' : BlogPost.objects.filter(category=category)[:5]
         })
 
-def view_album(request, slug):
-    album = get_object_or_404(Album, slug=slug)
-
-    return render(request,
-                  'Albums/view_album.html', {
-                  'album' : album,
-                  'photos' :  Photo.objects.filter(album=album),
-        })
 
 def contact(request):
     """Renders the contact page."""
@@ -149,18 +142,6 @@ def bythenumbers(request):
             'hikes' : hikes,
             })
 
-def photos(request):
-    from app.models import Photo, Album
-    assert isinstance(request, HttpRequest)
-    albums = Album.objects.all()
-    return render(
-        request,
-        'app/photos.html', {
-            'title' : 'Gallery',
-            'photos' : Photo.objects.filter(is_cover_photo=True),
-            'albums' : albums
-            }
-        )
 
 
 
