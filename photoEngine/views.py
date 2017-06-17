@@ -22,3 +22,13 @@ def view_album(request, slug):
                   'view_album.html', {
                   'album' : album.photos.all(),
         })
+
+def view_photo(request, slug):
+    photo = get_object_or_404(Photo, slug=slug)
+    album = Album.objects.filter(photos=photo)
+
+    return render(request,
+                  'view_photo.html', {
+                      'photo': photo,
+                      'album' : album
+                      })

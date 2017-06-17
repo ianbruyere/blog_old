@@ -71,7 +71,7 @@ class UploadZipForm(forms.Form):
         else:
             album = Album.objects.create(title=self.cleaned_data['title'],
                                          slug=slugify(self.cleaned_data['title']),
-                                         description=self.cleaned_data['description'])
+                                         )
         for filename in sorted(zip.namelist()):
             if filename.startswith('__') or filename.startswith('.'):
                 continue
@@ -90,7 +90,17 @@ class UploadZipForm(forms.Form):
 
             photo_title_root = self.cleaned_data['title'] if self.cleaned_data['title'] else album.title
 
-            photo = Photo(title=photo_title_root,
+            while True:
+                photo_title = ' '.join([photo_title_root, str(count)])
+                slug = slugify(photo_title)
+                if Photo.objects.filter(slug=slug).exists():
+                    count += 1
+                    continue
+                break
+
+
+            photo = Photo(title=photo_title,
+                          slug=slug,
                           caption=self.cleaned_data['caption']
                           )
 
