@@ -2,13 +2,12 @@
 
 {% block content %}
   <link rel="stylesheet" href="/static/app/content/photos.css" />
-  <h1>{{ album.name }}</h1>
-  {% for photo in photos %}
+  <h1>{{ album.title }}</h1>
+  {% for photo in album %}
     <div class="gallery">
-          <a target="_blank" href="{{MEDIA_URL}}{{photo.image.url}}">
+        <a href="{{ photo.get_absolute_url }}">
             <img src="{{MEDIA_URL}}{{photo.image.url}}" alt="photo.title" width="300" height="200" />
-          </a>
-        <div class="desc">{{ photo.summary }}</div>
+        </a>
     </div>
   {% endfor %}
 {% endblock %}

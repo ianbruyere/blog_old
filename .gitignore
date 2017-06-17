@@ -1,0 +1,4 @@
+#ignoring cash files
+**/__pycache__
+**/migrations
+**/venv
