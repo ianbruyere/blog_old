@@ -21,6 +21,7 @@ def view_album(request, slug):
     return render(request,
                   'view_album.html', {
                   'album' : album.photos.all(),
+
         })
 
 def view_photo(request, slug):

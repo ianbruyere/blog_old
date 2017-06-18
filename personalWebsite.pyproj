@@ -47,6 +47,13 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="blogEngine\admin.py" />
+    <Compile Include="blogEngine\apps.py" />
+    <Compile Include="blogEngine\migrations\__init__.py" />
+    <Compile Include="blogEngine\models.py" />
+    <Compile Include="blogEngine\tests.py" />
+    <Compile Include="blogEngine\views.py" />
+    <Compile Include="blogEngine\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="personalWebsite\admin.py">
       <SubType>Code</SubType>
@@ -56,6 +63,20 @@
     <Compile Include="personalWebsite\settings.py" />
     <Compile Include="personalWebsite\urls.py" />
     <Compile Include="personalWebsite\wsgi.py" />
+    <Compile Include="photoEngine\admin.py" />
+    <Compile Include="photoEngine\apps.py" />
+    <Compile Include="photoEngine\forms.py" />
+    <Compile Include="photoEngine\migrations\0001_initial.py" />
+    <Compile Include="photoEngine\migrations\0002_photo_caption.py" />
+    <Compile Include="photoEngine\migrations\0003_auto_20170614_1417.py" />
+    <Compile Include="photoEngine\migrations\0004_photo_slug.py" />
+    <Compile Include="photoEngine\migrations\__init__.py" />
+    <Compile Include="photoEngine\models.py" />
+    <Compile Include="photoEngine\templates\templatetags\photoEngine_tags.py" />
+    <Compile Include="photoEngine\templates\templatetags\__init__.py" />
+    <Compile Include="photoEngine\tests.py" />
+    <Compile Include="photoEngine\views.py" />
+    <Compile Include="photoEngine\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -69,11 +90,25 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
-    <Folder Include="app\templates\category\" />
-    <Folder Include="app\templates\blogs\" />
-    <Folder Include="app\templates\Albums\" />
     <Folder Include=".ebextensions\" />
+    <Folder Include="blogEngine\" />
+    <Folder Include="blogEngine\migrations\" />
+    <Folder Include="blogEngine\static\" />
+    <Folder Include="blogEngine\static\blogEngine\" />
+    <Folder Include="blogEngine\static\blogEngine\content\" />
+    <Folder Include="blogEngine\templates\" />
     <Folder Include="personalWebsite\" />
+    <Folder Include="photoEngine\" />
+    <Folder Include="photoEngine\migrations\" />
+    <Folder Include="photoEngine\migrations\__pycache__\" />
+    <Folder Include="photoEngine\templates\" />
+    <Folder Include="photoEngine\templates\admin\" />
+    <Folder Include="photoEngine\templates\admin\photoEngine\" />
+    <Folder Include="photoEngine\templates\admin\photoEngine\photo\" />
+    <Folder Include="photoEngine\templates\tags\" />
+    <Folder Include="photoEngine\templates\templatetags\" />
+    <Folder Include="photoEngine\templates\templatetags\__pycache__\" />
+    <Folder Include="photoEngine\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".ebextensions\django.config">
@@ -92,9 +127,6 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="app\static\app\scripts\tripOutline.js" />
-    <Content Include="app\templates\Albums\view_album.html">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="app\templates\app\bythenumbers.html">
       <SubType>Code</SubType>
     </Content>
@@ -104,17 +136,39 @@
     <Content Include="app\templates\app\headlayout.html">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="app\templates\app\photos.html">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="app\templates\app\tripoutline.html" />
-    <Content Include="app\templates\blogs\blogMainPage.html" />
-    <Content Include="app\templates\blogs\view_blog_post.html">
+    <Content Include="blogEngine\static\blogEngine\content\blogEngine.css" />
+    <Content Include="blogEngine\templates\blogMainPage.html" />
+    <Content Include="blogEngine\templates\blog_grid_view.html" />
+    <Content Include="blogEngine\templates\view_blog_post.html">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="app\templates\category\view_blog_category.html">
+    <Content Include="blogEngine\templates\view_blog_category.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="blogEngine\templates\index.html" />
+    <Content Include="photoEngine\migrations\__pycache__\0001_initial.cpython-35.pyc" />
+    <Content Include="photoEngine\migrations\__pycache__\0002_photo_caption.cpython-35.pyc" />
+    <Content Include="photoEngine\migrations\__pycache__\0003_auto_20170614_1417.cpython-35.pyc" />
+    <Content Include="photoEngine\migrations\__pycache__\0004_photo_slug.cpython-35.pyc" />
+    <Content Include="photoEngine\migrations\__pycache__\0005_auto_20170615_1727.cpython-35.pyc" />
+    <Content Include="photoEngine\migrations\__pycache__\0006_auto_20170615_1737.cpython-35.pyc" />
+    <Content Include="photoEngine\migrations\__pycache__\__init__.cpython-35.pyc" />
+    <Content Include="photoEngine\templates\admin\change_list.html" />
+    <Content Include="photoEngine\templates\admin\photoEngine\photo\upload_zip.html" />
+    <Content Include="photoEngine\templates\index.html" />
+    <Content Include="photoEngine\templates\photos.html" />
+    <Content Include="photoEngine\templates\tags\next_in_album.html" />
+    <Content Include="photoEngine\templates\tags\prev_in_album.html" />
+    <Content Include="photoEngine\templates\view_album.html" />
+    <Content Include="photoEngine\templates\view_photo.html" />
+    <Content Include="photoEngine\templates\templatetags\__pycache__\photoEngine_tags.cpython-35.pyc" />
+    <Content Include="photoEngine\templates\templatetags\__pycache__\__init__.cpython-35.pyc" />
+    <Content Include="photoEngine\__pycache__\admin.cpython-35.pyc" />
+    <Content Include="photoEngine\__pycache__\forms.cpython-35.pyc" />
+    <Content Include="photoEngine\__pycache__\models.cpython-35.pyc" />
+    <Content Include="photoEngine\__pycache__\views.cpython-35.pyc" />
+    <Content Include="photoEngine\__pycache__\__init__.cpython-35.pyc" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

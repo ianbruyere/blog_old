@@ -12,7 +12,7 @@ from django.http.response import HttpResponseRedirect
 import json
 from django.core import serializers
 from django.views.generic import list
-from app.models import BlogPost, Category
+from blogEngine.models import BlogPost, Category
 from photoEngine.models import Photo, Album
 
 def signup(request):
@@ -41,30 +41,7 @@ def home(request):
         }
     )
 
-def blogMainPage(request):
-    return render(request, 
-                  'blogs/blogMainPage.html',
-                  {
-                      'posts' : BlogPost.objects.all()
-                  }
-                )
 
-def view_blog_post(request, slug):
-    blogPost = get_object_or_404(BlogPost, slug=slug)
-    return render(request,
-                  'blogs/view_blog_post.html',
-          {
-           'post' : blogPost,
-           'category' : Category.objects.filter(id=blogPost.category.id)
-           })
-
-def view_category(request, slug):
-    category = get_object_or_404(Category, slug=slug)
-    return render(request,
-        'category/view_blog_category.html', {
-        'category' : category,
-        'posts' : BlogPost.objects.filter(category=category)[:5]
-        })
 
 
 def contact(request):

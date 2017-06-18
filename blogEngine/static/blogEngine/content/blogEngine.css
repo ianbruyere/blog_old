@@ -1,0 +1,52 @@
+﻿
+/*Blog Post Selection Display: How they are displayed to be selected*/
+
+.blogMain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blogEntry {
+    background-color: white;
+    flex: 0 1 calc(25% - 20px);
+    margin: 20px 10px 20px 10px;
+   
+}
+
+.metaInfo {
+    font-size: 12px;
+}
+
+.blogpost-title-header {
+    font-size: 24px;
+}
+
+.blogpost-title-header > a {
+    color:black;
+    text-decoration: none;
+}
+
+.blogpost-title-header > a:hover {
+    transition: .5s;
+    opacity: .6;
+}
+.blogpost-container-content {
+    font-size: 16px;
+}
+
+blogpost-link-readmore {
+    color: red;
+}
+
+/*How the Actual Blog Post Is Displayed when selected for reading*/
+.post_flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_flex_item {
+    flex: 1 1 800px;
+    max-width: 50%;
+}

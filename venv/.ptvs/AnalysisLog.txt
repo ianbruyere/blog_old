@@ -20830,3 +20830,111 @@ System.FormatException: Input string was not in a correct format.
 2017-06-06T19:04:44: Saving group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\yaml"
 2017-06-06T19:04:44: End of group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\yaml"
 2017-06-06T19:04:45: Deleting 167 files
+
+2017-06-18T11:43:54: Start analysis
+2017-06-18T11:43:54: [WARNING] Library was set explicitly - skipping path detection
+2017-06-18T11:43:54: IncludeModulesFromModulePath = win32com
+2017-06-18T11:43:56: Deleting 0 files
+2017-06-18T11:43:56: astropy.CallDepth = 0
+2017-06-18T11:43:56: matplotlib.CallDepth = 3
+2017-06-18T11:43:56: pandas.CallDepth = 0
+2017-06-18T11:43:56: sympy.CallDepth = 0
+2017-06-18T11:43:56: Start group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown" with 30 files
+2017-06-18T11:43:56: Parsing "markdown.blockparser" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\blockparser.py")
+2017-06-18T11:43:56: Parsing "markdown.blockprocessors" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\blockprocessors.py")
+2017-06-18T11:43:56: Parsing "markdown.inlinepatterns" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\inlinepatterns.py")
+2017-06-18T11:43:56: Parsing "markdown.odict" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\odict.py")
+2017-06-18T11:43:56: Parsing "markdown.postprocessors" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\postprocessors.py")
+2017-06-18T11:43:56: Parsing "markdown.preprocessors" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\preprocessors.py")
+2017-06-18T11:43:56: Parsing "markdown.serializers" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\serializers.py")
+2017-06-18T11:43:56: Parsing "markdown.treeprocessors" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\treeprocessors.py")
+2017-06-18T11:43:56: Parsing "markdown.util" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\util.py")
+2017-06-18T11:43:56: Parsing "markdown" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\__init__.py")
+2017-06-18T11:43:56: Parsing "markdown.__main__" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\__main__.py")
+2017-06-18T11:43:56: Parsing "markdown.__version__" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\__version__.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.abbr" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\abbr.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.admonition" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\admonition.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.attr_list" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\attr_list.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.codehilite" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\codehilite.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.def_list" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\def_list.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.extra" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\extra.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.fenced_code" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\fenced_code.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.footnotes" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\footnotes.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.headerid" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\headerid.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.meta" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\meta.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.nl2br" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\nl2br.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.sane_lists" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\sane_lists.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.smarty" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\smarty.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.smart_strong" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\smart_strong.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.tables" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\tables.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.toc" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\toc.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions.wikilinks" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\wikilinks.py")
+2017-06-18T11:43:56: Parsing "markdown.extensions" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown\extensions\__init__.py")
+2017-06-18T11:43:56: Parsing complete
+2017-06-18T11:43:56: Analyzing "markdown.blockparser"
+2017-06-18T11:43:56: Analyzing "markdown.blockprocessors"
+2017-06-18T11:43:56: Analyzing "markdown.inlinepatterns"
+2017-06-18T11:43:56: Analyzing "markdown.odict"
+2017-06-18T11:43:56: Analyzing "markdown.postprocessors"
+2017-06-18T11:43:56: Analyzing "markdown.preprocessors"
+2017-06-18T11:43:56: Analyzing "markdown.serializers"
+2017-06-18T11:43:56: Analyzing "markdown.treeprocessors"
+2017-06-18T11:43:56: Analyzing "markdown.util"
+2017-06-18T11:43:56: Analyzing "markdown"
+2017-06-18T11:43:56: Analyzing "markdown.__main__"
+2017-06-18T11:43:56: Analyzing "markdown.__version__"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.abbr"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.admonition"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.attr_list"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.codehilite"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.def_list"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.extra"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.fenced_code"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.footnotes"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.headerid"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.meta"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.nl2br"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.sane_lists"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.smarty"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.smart_strong"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.tables"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.toc"
+2017-06-18T11:43:56: Analyzing "markdown.extensions.wikilinks"
+2017-06-18T11:43:56: Analyzing "markdown.extensions"
+2017-06-18T11:43:56: Starting analysis of 30 modules
+2017-06-18T11:44:04: Analysis complete
+2017-06-18T11:44:04: Saving group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown"
+2017-06-18T11:44:05: End of group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\markdown"
+2017-06-18T11:44:06: Deleting 0 files
+
+2017-06-18T12:33:54: Start analysis
+2017-06-18T12:33:54: [WARNING] Library was set explicitly - skipping path detection
+2017-06-18T12:33:54: IncludeModulesFromModulePath = win32com
+2017-06-18T12:33:55: Deleting 0 files
+2017-06-18T12:33:55: astropy.CallDepth = 0
+2017-06-18T12:33:55: matplotlib.CallDepth = 3
+2017-06-18T12:33:55: pandas.CallDepth = 0
+2017-06-18T12:33:55: sympy.CallDepth = 0
+2017-06-18T12:33:55: Start group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor" with 8 files
+2017-06-18T12:33:56: Parsing "redactor.fields" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\fields.py")
+2017-06-18T12:33:56: Parsing "redactor.forms" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\forms.py")
+2017-06-18T12:33:56: Parsing "redactor.handlers" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\handlers.py")
+2017-06-18T12:33:56: Parsing "redactor.urls" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\urls.py")
+2017-06-18T12:33:56: Parsing "redactor.utils" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\utils.py")
+2017-06-18T12:33:56: Parsing "redactor.views" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\views.py")
+2017-06-18T12:33:56: Parsing "redactor.widgets" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\widgets.py")
+2017-06-18T12:33:56: Parsing "redactor" ("C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor\__init__.py")
+2017-06-18T12:33:56: Parsing complete
+2017-06-18T12:33:56: Analyzing "redactor.fields"
+2017-06-18T12:33:56: Analyzing "redactor.forms"
+2017-06-18T12:33:56: Analyzing "redactor.handlers"
+2017-06-18T12:33:56: Analyzing "redactor.urls"
+2017-06-18T12:33:56: Analyzing "redactor.utils"
+2017-06-18T12:33:56: Analyzing "redactor.views"
+2017-06-18T12:33:56: Analyzing "redactor.widgets"
+2017-06-18T12:33:56: Analyzing "redactor"
+2017-06-18T12:33:56: Starting analysis of 8 modules
+2017-06-18T12:33:57: Analysis complete
+2017-06-18T12:33:57: Saving group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor"
+2017-06-18T12:33:57: End of group "C:\Users\Ian Bruyere\documents\visual studio 2015\Projects\personalWebsite\personalWebsite\venv\Lib\site-packages\redactor"
+2017-06-18T12:33:59: Deleting 0 files

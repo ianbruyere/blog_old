@@ -1,0 +1,18 @@
+{% extends 'app/layout.html' %}
+
+{% block content %}
+
+<div class="post_flex_container">
+    <div class="post_flex_item">
+
+    <h1>{{post.title }}</h1>
+{% autoescape off %}
+    
+    <p>{{ post.body }}</p>
+{% endautoescape %}
+        </div>
+     </div>
+
+<br />
+
+{% endblock %}

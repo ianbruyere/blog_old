@@ -63,39 +63,6 @@ class Hiking(models.Model):
     typeOfTerrain = models.CharField(max_length=60, choices=(('Hilly', 'Hilly'), ('Flat', 'Flat'), ('Mixed', 'Mixed')))
 
 
-class BlogPost(models.Model):
-     title = models.CharField(max_length=250, unique=True)
-     slug = models.SlugField(max_length=100, unique=True)
-     body = models.TextField() 
-     datePosted = models.DateField(db_index=True, auto_now_add=True)
-     category = models.ForeignKey('Category')
 
-     def __str__(self):
-         return 'BlogPost: {}'.format(self.title)
-
-     def __unicode__(self):
-         return '%s' % self.title
-
-     @permalink
-     def get_absolute_url(self):
-         return ('view_blog_post', None, {'slug' : self.slug})
-
-
-
-
-
-class Category(models.Model):
-    title = models.CharField(max_length=100, db_index=True)
-    slug = models.SlugField(max_length=100, db_index=True)
-
-    def __unicode__(self):
-        return '%s' % self.title
-
-    @permalink
-    def get_absolute_url(self):
-        return ('view_blog_category', None, {'slug' : self.slug})
-
-    def __str__(self):
-        return 'Category: {}'.format(self.title)
 
 

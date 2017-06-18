@@ -1,0 +1,28 @@
+﻿{% extends 'app/layout.html' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/blogEngine/content/blogEngine.css"/>{% endblock %}
+{% for post in posts %}
+  <div class="blogPost-gridview">
+      <div class="blogEntry-metainfo">
+          <span class="metainfo"><time class="tim-date-blog-entry-posted">{{post.datePosted}}</time> <i>by</i> {{post.author}} </span>
+      </div>
+      <div class="blogpost-title-container"><h2 class="blogpost-title-header"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2></div>
+      <div class="blogpost-container-content">
+          <p>
+              {% autoescape off %}
+                {{ post.body|truncatechars:175 }}
+              {% endautoescape %}
+              <br/>
+              <br />
+              <span><a class="blogpost-link-readmore" href="{{ post.get_absolute_url }}">Read More</a></span>
+              <br/>
+              <span>
+                  {% for category in post.categories %}
+              <a class="blogpost-categories" href="{{category.get_absolute_url}}">{{category.title}}</a>{% if not forloop.last %} {% endif %}
+                  {% endfor %}
+              </span>
+          </p>
+      </div>
+  </div>
+{% endfor %}

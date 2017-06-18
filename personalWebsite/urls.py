@@ -11,6 +11,7 @@ from django.conf.urls.static import static
 import app.forms
 import app.views
 import photoEngine.views
+import blogEngine.views
 
 # Uncomment the next lines to enable the admin:
 from django.contrib import admin
@@ -40,22 +41,24 @@ urlpatterns = [
             'next_page': '/',
         },
         name='logout'),
-    url(r'^blogs/$',app.views.blogMainPage, name='blog' ),
+    url(r'^blogs/$',blogEngine.views.blogMainPage, name='blog' ),
     url(r'^bythenumbers/', app.views.bythenumbers, name='bythenumbers'),
     url(r'^signup', app.views.signup, name='signup'),
     url(r'^blogs/(?P<slug>[^\.]+)',
-        app.views.view_blog_post,
+        blogEngine.views.view_blog_post,
         name='view_blog_post'),
     url(
         r'^category/(?P<slug>[^\.]+).html',
-        app.views.view_category,
+        blogEngine.views.view_category,
         name='view_blog_category'
         ),
     url(r'^album/(?P<slug>[^\.]+).html',
         photoEngine.views.view_album,
         name='view_album'
         ),
-        url(r'^photos', photoEngine.views.photos, name='photos'),
+    url(r'^photos', photoEngine.views.photos, name='photos'),
+    url(r'^view_photo/(?P<slug>[^\.]+).html', photoEngine.views.view_photo, name='view_photo'),
+    url(r'^redactor/', include('redactor.urls')),
 
         
     # Uncomment the admin/doc line below to enable admin documentation:
