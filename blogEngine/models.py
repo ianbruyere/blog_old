@@ -1,9 +1,6 @@
 from django.db import models
 from django.db.models import permalink
 from django.template.defaultfilters import slugify
-from django.conf import settings
-from photoEngine.models import Photo
-import markdown
 
 # Create your models here.
 
