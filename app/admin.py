@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-
+from django import forms
 from .models import *
 from .forms import SignUpForm # mapMarkers, tripCost, milesTraveled, CustomUser, 
 # from .forms import UserCreationForm 
@@ -12,7 +12,16 @@ class BlogAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('title')}
 
-admin.site.register(MapMarker)
+class MapMarkerAdminForm(forms.ModelForm):
+    class Meta:
+        model = MapMarker
+        exclude = []
+
+class MapMarkerAdmin(admin.ModelAdmin):
+    form = MapMarkerAdminForm
+    list_display = ('name', 'typeOfMarker', 'submittedBy')
+
+admin.site.register(MapMarker, MapMarkerAdmin)
 admin.site.register(Cost)
 admin.site.register(DistanceDriven)
 admin.site.register(User)

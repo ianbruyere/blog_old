@@ -28,6 +28,9 @@
                         <input type="submit" value="Log in" class="btn btn-default" />
                     </div>
                 </div>
+                {% if form.errors %}
+                <p class="validation-summary-errors">{{ form.errors|escape }}</p>
+                {% endif %}
             </form>
         </section>
     </div>

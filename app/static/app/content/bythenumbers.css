@@ -1,41 +1,70 @@
-#containerCost {
-    margin: 100px 0px 0px 0px;
-    align-content:center;
-    display: inline-block;
+/* Style the tab content */
+.tabcontent {
+    display: flex;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.container-totals {
+    align-content: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .totalCategoryCost {
-    display: inline-block;
+    flex: 1 1 calc(15% - 20px);
     text-align: center;
-    margin: 0px 10px 0px 10px;
-    width: 100px;
+    color: white;
 
 }
 
+#totalCost {
+    flex-direction: column;
+}
+
+#total-cost {
+    flex: 3 1 20%;
+    background-color:orangered;
+}
+
+#gas-cost-total {
+    background-color: black;
+}
+
+#camping-cost-total {
+    background-color: forestgreen;
+}
+
+#food-cost-total {
+    background-color: goldenrod;
+}
+
+#entertainment-cost-total {
+    background-color:crimson;
+}
+
+#misc-cost-total {
+    background-color: cornflowerblue;
+}
 .totalCategoryCost label {
-    margin: 0px 10px 0px 10px;
+    font-size: 18px;
 }
 
-#mileageContainer{
-    width: 50%;
-    display: inline-block;
-}
-
-#totalCategoreyContainer {
-    align-content: center;
-    display: inline-block;
-}
-
-label {
-    display: inline-block;
-}
-
-.totalCetegoryCost p {
+.totalCategoryCost p {
     font-size: 32px;
 }
 
-.costColumns{
-    width: 33%;
+.containerFilter {
+    margin: 20px 0px 20px 15px;
+}
+
+.containerFilter select {
+    min-width: 60px;
+}
+
+#tableCost tr:nth-child(even) {
+    background-color:lightgray;
 }
 
 /* Style the tab */
@@ -66,10 +95,4 @@ div.tab button.active {
     background-color: #ccc;
 }
 
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
+

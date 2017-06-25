@@ -1,8 +1,10 @@
 $(document).ready(function () {
+    
     populateAllListItems();
     populateAllMileageListItems()
     populateAllClimbs();
     populateAllHikes();
+    openTab(null, 'Cost');
     totalCostOfSelected();
 });
 
@@ -29,7 +31,9 @@ function populateAllListItems() {
     // this is where i populate everything
     // will probably just make this function the sum of the two filters
     // but for now prototyping it out
-    var cost_json = JSON.parse(costData)
+    var cost_json = JSON.parse(costData);
+    var ddlStateFilterarr = [];
+    var arrMonthFilter = [];
     for (var i = 0; i < cost_json.length; i++) {
         // this will loop through everything in the data and append it
         // to the unordered list and set the class as the categorey of the data
@@ -38,10 +42,18 @@ function populateAllListItems() {
         var itemPurchased = buildTableColumn(cost_json[i].fields.itemPurchased);
         var category = buildTableColumn(cost_json[i].fields.category);
         var state = buildTableColumn(cost_json[i].fields.state);
-        $('#tableCost tbody').append('<tr class="' + cost_json[i].fields.category + ' ' + cost_json[i].fields.state + '">'
-            + cost + +itemPurchased + category + state + '</tr>')
-        $('#ddlState').append('<option>' + state + '</option>');
+        var month = buildTableColumn(cost_json[i].fields.month);
+        $('#tableCost tbody').append('<tr class="' + cost_json[i].fields.category + ' ' + cost_json[i].fields.state + ' ' + cost_json[i].fields.month + '">'
+            + cost +itemPurchased + category + state + month + '</tr>')
+        ddlStateFilterarr.push(cost_json[i].fields.state);
+        arrMonthFilter.push(cost_json[i].fields.month);
     }
+    $($.unique(ddlStateFilterarr)).each(function (index, item) {
+        $('#ddlState').append($('<option>').html(item));
+    })
+    $($.unique(arrMonthFilter)).each(function (index, item) {
+        $('#ddlMonth').append($('<option>').html(item));
+    })
 }
 
 function populateAllClimbs() {
@@ -84,6 +96,17 @@ function filterByState() {
     var selectedState = $('#ddlState').find(':selected').text()
     $('#tableCost tbody').find('tr').each(function () {
         if (!$(this).hasClass(selectedState) && selectedState != '') {
+            this.hidden = true;
+        }
+    })
+    totalCostOfSelected();
+}
+
+function filterByMonth() {
+    unHideTableRows('#tableCost')
+    var selectedMonth = $('#ddlMonth').find(':selected').text()
+    $('#tableCost tbody').find('tr').each(function () {
+        if (!$(this).hasClass(selectedMonth) && selectedMonth != '') {
             this.hidden = true;
         }
     })

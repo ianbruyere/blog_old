@@ -11,11 +11,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.tagName
 
-    #def save(self, *args, **kwargs):
-    #    if self.slug is None:
-    #        self.slug=slugify(self.title)
-    #    super(Photo, self).save(*args, **kwargs)
-
 
 class Photo(models.Model):
     title = models.CharField(max_length=256)
@@ -28,7 +23,6 @@ class Photo(models.Model):
     image = models.ImageField(upload_to='photos/%Y/%m')
     is_cover_photo = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag, blank=True)
-    # credit = models.CharField(max_length=120, default=None)
 
     def __str__(self):
         return 'Photo: {}'.format(self.title)
@@ -68,10 +62,6 @@ class Photo(models.Model):
 
     def admin_thumbnail(self):
 
-        #if hasattr(self, 'get_absolute_url'):
-        #    return u'<img src="%s" width="%s", height="%s">' % \
-        #        (self.get_absolute_url(), 200,200)
-        #else:
         return u'<img src="%s" width="%s", height="%s">' % \
                     (self.image.url, 200,200)
     admin_thumbnail.short_description = ('Thumbnail')

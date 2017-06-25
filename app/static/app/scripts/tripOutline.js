@@ -92,7 +92,7 @@ function initMap() {
                 var content = '<h1 class="firstHeading">' + marker.title + '</h1> <br />' +
                               '<h3 class="secondHeading">Est. Date: ' + pointsData[i].fields.date + '</h2><br />' +
                               '<h3 class="secondHeading">The Plan</h2>' + '<p>' +
-                                pointsData[i].fields.description + '</p>';
+                                pointsData[i].fields.description + '<br> submitted by:' + pointsData[i].fields.submittedBy + '</p>';
                 infowindow.setContent(content);
                 infowindow.open(map, marker);
             }

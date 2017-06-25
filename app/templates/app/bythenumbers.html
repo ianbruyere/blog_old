@@ -2,7 +2,7 @@
 {% block content %}
 <link rel="stylesheet" href="/static/app/content/bythenumbers.css" />
 <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Cost')">Cost</button>
+    <button class="tablinks" onclick="openTab(event, 'Cost'), totalCostOfSelected()" id="default">Cost</button>
     <button class="tablinks" onclick="openTab(event, 'Miles')">Miles Traveled</button>
     <button class="tablinks" onclick="openTab(event, 'Climbs')">Climbs</button>
     <button class="tablinks" onclick="openTab(event, 'Hiked')">Hiking</button>
@@ -10,27 +10,32 @@
 
 <!-- here is where the money breakdown will begin -->
 <div id="Cost" class="tabcontent">
-  <label>Total Cost:</label><p id="overallCost"></p>
     <!-- these are where all the categories will go, i want them side by side, or possibly 2x2 -->
-  <div id="totalCategoreyContainer" style="display: flex" >
-    <div class="totalCategoryCost"><label>Gas:</label><p id="costGas"></p></div>
-    <div class="totalCategoryCost"><label>Camping:</label><p id="costCamping"></p></div>
-    <div class="totalCategoryCost"><label>Food:</label><p id="costFood"></p></div>
-    <div class="totalCategoryCost"><label>Entertainment:</label><p id="costEntertainment"></p></div>
-    <div class="totalCategoryCost"><label>Miscellaneous:</label><p id="costMisc"></p></div>
+  <div class="container-totals">
+    <div class="totalCategoryCost" id="total-cost"><label>Total Cost:</label><p id="overallCost"></p></div>
+    <div class="totalCategoryCost" id="gas-cost-total"><label>Gas</label><p id="costGas"></p></div>
+    <div class="totalCategoryCost" id="camping-cost-total"><label>Camping</label><p id="costCamping"></p></div>
+    <div class="totalCategoryCost" id="food-cost-total"><label>Food</label><p id="costFood"></p></div>
+    <div class="totalCategoryCost" id="entertainment-cost-total"><label>Entertainment</label><p id="costEntertainment"></p></div>
+    <div class="totalCategoryCost" id="misc-cost-total"><label>Miscellaneous</label><p id="costMisc"></p></div>
   </div>
 
-  <!-- filter items should go here, basically category or state -->
-  <!-- obviously state should be a drop down of some sort but should only contain places I have actually been -->
-  <!-- not sure how I want it to display yet, some ideas are basically a tool box containing the fiter items or keep
-      the horizontal theme running and just have them in a bar under the categories-->
-   <div id="containerFilter">
-       <label>Filter By State:<select id="ddlState" onchange="filterByState()">
-           <option></option>
-       </select></label>
+
+   <div class="containerFilter">
+       <table>
+           <tr>
+               <td>Filter By State:</td>
+               <td><select id="ddlState" onchange="filterByState()"><option></option></select></td>
+           </tr>
+           <tr>
+               <td>Filter by Month:</td>
+               <td><select id="ddlMonth" onchange="filterByMonth()"><option></option></select></td>
+           </tr>
+       </table>
+
    </div>
     <!-- here is where the list items will be displayed based off of filter values -->
-    <div id="containerListItems">
+    <div id="container-table">
         <table style="width:100%" id="tableCost">
             <thead>
                 <tr>
@@ -38,6 +43,7 @@
                 <th>Item</th>
                 <th>Category</th>
                 <th>State</th>
+                <th>Month</th>
                 </tr>
             </thead>
             <tbody>
@@ -105,12 +111,13 @@
         </table>
     </div>
 </div>
+{% endblock %}
 
+{% block scripts %}
 <script src="/static/app/scripts/jquery-1.10.2.js"></script>
 <script>var costData = '{{ money|escapejs }}'
         var distanceData = JSON.parse('{{distance|escapejs}}')
         var climbData = JSON.parse('{{climbs|escapejs}}')
         var hikeData = JSON.parse('{{hikes|escapejs}}')</script>
 <script src="/static/app/scripts/bythenumbers.js"></script>
-
 {% endblock %}

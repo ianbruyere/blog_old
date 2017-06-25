@@ -16,5 +16,6 @@ class EntryAdminForm(forms.ModelForm):
 
 class EntryAdmin(admin.ModelAdmin):
     form = EntryAdminForm
+    list_display = ('title', 'categories')
 
 admin.site.register(BlogPost, EntryAdmin)

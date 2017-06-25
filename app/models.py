@@ -24,6 +24,7 @@ class MapMarker(models.Model):
     confirmed = models.BooleanField(default=False, blank=True)
     date = models.DateField(default=None, null=True)
     alreadyVisited = models.BooleanField(default=False)
+    submittedBy = models.CharField(max_length=256, default=None, blank=True)
 
     def __str__(self):
         return 'MapMarker: {}'.format(self.name)

@@ -44,16 +44,14 @@ class MapMarkersForm(ModelForm):
     class Meta:
         model = MapMarker
 
-        exclude = ['partOfTrip', 'orderVisiting', 'confirmed', 'alreadyVisited']
+        exclude = ['partOfTrip', 'orderVisiting', 'confirmed', 'alreadyVisited', 'submittedBy']
         widgets = {'name' : forms.HiddenInput(),
                    'address' : forms.HiddenInput(),
                    'lat' : forms.HiddenInput(),
                    'lng' : forms.HiddenInput(),
                    'date' : forms.DateInput(),
                     }
-        labels = { 'typeOfMarker' : 'Category'
-            
-            }
+        labels = { 'typeOfMarker' : 'Category'}
 
     
 

@@ -75,7 +75,10 @@ def tripoutline(request):
     if request.method == 'POST':
         mapMarkersForm = MapMarkersForm(request.POST)
         if mapMarkersForm.is_valid():
-            markers = mapMarkersForm.save()
+            marker = mapMarkersForm.save(commit=False)
+            marker.submittedBy = request.user.username
+            marker.save()
+            
             # process the data in form.cleaned_data as required
 
             return HttpResponseRedirect('tripoutline')
