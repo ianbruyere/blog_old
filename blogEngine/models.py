@@ -12,7 +12,7 @@ class BlogPost(models.Model):
      body = models.TextField()
      author = models.CharField(max_length=100, blank=True) 
      datePosted = models.DateField(db_index=True, auto_now_add=True)
-     categories = models.ForeignKey('Category', 
+     categories = models.ManyToManyField('Category', 
                                   blank=True, default=None)
 
      def __str__(self):

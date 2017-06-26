@@ -17,6 +17,7 @@ def view_blog_post(request, slug):
                   'view_blog_post.html',
           {
            'post' : blogPost,
+           'categories' : blogPost.categories.all()
            })
 
 def view_category(request, slug):
@@ -24,7 +25,7 @@ def view_category(request, slug):
     return render(request,
         'view_blog_category.html', {
         'category' : category,
-        'posts' : BlogPost.objects.filter(category=category)[:5]
+        'posts' : BlogPost.objects.filter(categories=category)[:5]
         })
 
 def blog_grid_view(request):
