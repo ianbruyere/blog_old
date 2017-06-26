@@ -1,6 +1,0 @@
-test_error_of_type
-test_node_ignores_exception
-utils
-astroid
-pytest
-testGetArgumentFromCall

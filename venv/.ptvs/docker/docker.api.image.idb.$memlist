@@ -1,9 +1,0 @@
-six
-log
-errors
-logging
-warnings
-auth
-ImageApiMixin
-utils
-INSECURE_REGISTRY_DEPRECATION_WARNING

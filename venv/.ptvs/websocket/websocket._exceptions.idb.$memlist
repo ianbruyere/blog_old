@@ -1,7 +1,0 @@
-WebSocketProtocolException
-WebSocketException
-WebSocketProxyException
-WebSocketConnectionClosedException
-WebSocketBadStatusException
-WebSocketTimeoutException
-WebSocketPayloadException

@@ -13,7 +13,7 @@ class BlogPost(models.Model):
      author = models.CharField(max_length=100, blank=True) 
      datePosted = models.DateField(db_index=True, auto_now_add=True)
      categories = models.ForeignKey('Category', 
-                                  blank=True)
+                                  blank=True, default=None)
 
      def __str__(self):
          return 'BlogPost: {}'.format(self.title)
