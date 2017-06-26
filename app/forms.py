@@ -11,6 +11,7 @@ from django.core.validators import RegexValidator
 from app.customAuthentication import MyBackEnd
 from app.models import  MapMarker, User
 from django.forms import ModelForm
+from time import gmtime, strftime
 
 alphanumeric = RegexValidator(r'^[0-9a-zA-Z]*$', 'Only alphanumeric characters are allowed.')
 
@@ -52,6 +53,16 @@ class MapMarkersForm(ModelForm):
                    'date' : forms.DateInput(),
                     }
         labels = { 'typeOfMarker' : 'Category'}
+
+    def clean(self):
+        isMeetUp = self.cleaned_data.get('typeOfMarker') == 'Meet-Up'
+        
+        if isMeetUp and self.cleaned_data.get('date') == '':
+            msg = forms.ValidationError("This field is required.")
+            self.add_error('date', msg)
+        else:
+            self.cleaned_data['date'] = strftime("%Y-%m-%d", gmtime())
+        return self.cleaned_data
 
     
 

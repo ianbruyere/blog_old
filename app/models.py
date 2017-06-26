@@ -22,12 +22,13 @@ class MapMarker(models.Model):
     typeOfMarker = models.CharField(max_length=70, choices=(("Climbing", "Climbing"), ("Entertainment", "Entertainment"), ("Food", "Food"), ("Meet-Up", "Meet-Up")), default='Climbing')
     description = models.TextField(max_length=1000, default=None, null=True)
     confirmed = models.BooleanField(default=False, blank=True)
-    date = models.DateField(default=None, null=True)
+    date = models.DateField(default=None, null=True, blank=True)
     alreadyVisited = models.BooleanField(default=False)
     submittedBy = models.CharField(max_length=256, default=None, blank=True)
 
     def __str__(self):
         return 'MapMarker: {}'.format(self.name)
+
 
 # keeps track of how the trip has cost me and what categories it falls in
 class Cost(models.Model):
