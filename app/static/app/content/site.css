@@ -131,10 +131,10 @@ input[type="checkbox"].input-validation-error {
 }
 
 .image-slide {
-    width: 80vh;
-    margin: 10vh;
+    max-width: 1000px;
+    max-height: 583px;
     position: relative;
-    max-width: 75%;
+    
 }
 
 .image-container {
