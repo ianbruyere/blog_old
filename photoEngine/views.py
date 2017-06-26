@@ -11,7 +11,7 @@ def photos(request):
         request,
         'photos.html', {
             'title' : 'Gallery',
-            'albums' : albums
+            'albums' : albums,
             }
         )
 

@@ -1,22 +1,24 @@
 ﻿html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
 	height: 100%;
 }
 
-.flex_container {
-	display: flex;
-	flex-wrap: wrap;
-	height: 100vh;
+
+.view {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: gray;
+    width: 100%;
 }
 
-.box {
-	background-color: grey;
-	margin: 10px;
-	font-size: 16px;
-	text-align: center;
-	padding:10px;
-	opacity: .4;
-	flex: 1 1 calc(33.33% - 20px);
-}
 
 ul.topnav {
 	list-style-type: none;
@@ -30,6 +32,8 @@ ul.topnav {
 ul.topnav li {
 	float: left;
 }
+
+
 
 ul.topnav li a {
 	display: block;
@@ -113,3 +117,90 @@ input[type="checkbox"].input-validation-error {
 	font-size: 40px
 }
 
+/*Index Page Main display Info*/
+.indexFlexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#photoBillboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.image-slide {
+    width: 80vh;
+    margin: 10vh;
+    position: relative;
+    max-width: 75%;
+}
+
+.image-container {
+    position:relative;
+}
+
+.display-left {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+}
+
+.display-right {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+}
+
+/*Blog Post Selection Display: How they are displayed to be selected*/
+
+.blogMain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blogEntry {
+    background-color: white;
+    flex: 0 1 calc(25% - 20px);
+    margin: 20px 10px 20px 10px;
+   
+}
+
+.metaInfo {
+    font-size: 12px;
+}
+
+.blogEntryHeader {
+    font-size: 24px;
+}
+
+.blogEntryHeader > a {
+    color:black;
+    text-decoration: none;
+}
+
+.blogEntryHeader > a:hover {
+    transition: .5s;
+    opacity: .6;
+}
+.entry-content {
+    font-size: 16px;
+}
+
+.read-more-link {
+    color: red;
+}
+
+/*How the Actual Blog Post Is Displayed when selected for reading*/
+.post_flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_flex_item {
+    flex: 1 1 800px;
+    max-width: 50%;
+}

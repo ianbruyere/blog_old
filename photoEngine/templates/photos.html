@@ -7,7 +7,7 @@
   {% load static %}
   {% for album in albums %}
     <div class="gallery">
-          <a target="_self" href="{{album.get_absolute_url}}">
+          <a target="_self" href="{{album.get_absolute_url}}">            
              <div class="desc">{{album.title}}</div>
           </a>
     </div>

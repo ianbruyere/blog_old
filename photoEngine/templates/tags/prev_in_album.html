@@ -1,5 +1,5 @@
 ﻿{% if photo %}
 	<a title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
-		<!--<img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}" />-->
+		<img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}" />
 	</a>
 {% endif %}

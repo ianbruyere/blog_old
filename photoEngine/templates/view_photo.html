@@ -1,9 +1,8 @@
 ﻿{% extends 'app/layout.html' %}
-{% load photoEngine_tags %}
 {% block content %}
+{% load photoEngine_tags %}
+<link rel="stylesheet" href="/static/app/content/photos.css" />
              
-                   <img src="{{MEDIA_URL}}{{photo.image.url}}" width="800" height="800"/>
-{#{% for photos in album %}
-{% endfor %}#}
-	          {#{% next_in_album photo album %}#}
+<img class="photo" src="{{MEDIA_URL}}{{photo.image.url}}" />
+ 
 {% endblock %}

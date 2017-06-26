@@ -1,6 +1,9 @@
 {% extends "app/layout.html" %}
 
 {% block content %}
+<style>
+    .image-slides {display: none;}
+</style>
 <div class="indexFlexContainer">
     <div id="photoBillboard">
         <div class="image-container">
@@ -8,8 +11,8 @@
           <img class="image-slide" src="{{MEDIA_URL}}{{image.image.url}}" />
         {% endfor %}
 
-          <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
-          <button class="display-right" onclick="plusDivs(+1)">&#10095;</button>
+          <!--<button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="display-right" onclick="plusDivs(+1)">&#10095;</button>-->
         </div>
     </div>
     <div class="blogMain">
@@ -36,6 +39,22 @@
 
 {% block scripts %}
 <script src="/static/app/scripts/index.js" ></script>
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("image-slide");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 4000); // Change image every 2 seconds
+    }
+</script>
 {% endblock %}
 
 {% endblock %}
