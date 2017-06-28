@@ -36,13 +36,32 @@ def view_category(request, slug):
     return render(request,
         'view_blog_category.html', {
         'category' : category,
-        'posts' : BlogPost.objects.filter(categories=category)[:5]
+        'posts' : BlogPost.objects.filter(categories=category)
         })
 
-def blog_grid_view(request):
-    return render(request, 
-                  'blog_grid_view',
-                  {
-                      'posts' : BlogPost.objects.all()    
-                  }
-                )
+#def blog_grid_view(request, number_of_posts=None, paginate=False):
+#    if number_of_posts == None:
+#        blogPosts = BlogPost.objects.all()
+#    else:
+#        blogPosts = BlogPost.objects.all()[:number_of_posts]
+#    if paginate:
+#        blogPosts = paginateBlogPosts(blogPosts)
+#    return render(request, 
+#                  'blog_grid_view',
+#                  {
+#                      'posts' : blogPosts
+#                  }
+#                )
+
+#def paginateBlogPosts(list_posts):
+#    page = request.GET.get('page', 1)
+
+#    paginator = Paginator(list_posts, 12)
+#    try:
+#        paginated_posts = paginator.page(page)
+#    except PageNotAnInteger:
+#        paginated_posts = paginator.page(1)
+#    except EmptyPage:
+#        paginated_posts = paginator.page(paginator.num_pages)
+
+#    return paginated_posts

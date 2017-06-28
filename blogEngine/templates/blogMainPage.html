@@ -2,49 +2,6 @@
 
 {% block content %}
 
-<div class="blogMain">
-  {% for post in posts %}
-    <div class="blogEntry">
-        <div class="blogEntry-MetaInfo">
-            <span class="metaInfo"><time class="time-date-blog-entry-posted" >{{post.datePosted}}</time> <i>by</i> Ian Bruyere</span>
-        </div>
-        <div class="blogEntryTitle"><h2 class="blogEntryHeader"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2></div>
-        <div class="entry-content">
-          <p>
-              {% autoescape off %}
-              {{ post.body|truncatechars:175 }}
-              {% endautoescape %}
-              <br/>
-              <br />
-              <span><a class="read-more-link" href="{{ post.get_absolute_url }}">Read More</a></span>
-              <br/>
-          </p>
-        </div>
-    </div>
-  {% endfor %}
- <div class="div-paginator">
-    {% if posts.has_other_pages %}
-      <ul class="pagination">
-          {% if posts.has_previous %}
-            <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
-          {% else %}
-            <li class="disabled"><span>&laquo;</span></li>
-          {% endif %}
-          {% for i in posts.paginator.page_range %}
-            {% if posts.number == i %}
-              <li class="active"><span>{{ i }} <span class="sr-only"> (current)</span></span></li>
-            {% else %}
-              <li><a href="?page={{ i }}">{{ i }}</a></li>
-            {% endif %}
-          {% endfor %}
-          {% if posts.has_next %}
-            <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
-          {% else %}
-            <li class="disabled"><span>&raquo;</span></li>
-          {% endif %}
-      </ul>
-    {% endif %}
-</div>
-</div>
+{% include "blogEngine/blog_grid_view.html"  %}
 
 {% endblock %}
