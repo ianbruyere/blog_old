@@ -1,12 +1,23 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from .models import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def blogMainPage(request):
+    blog_posts = BlogPost.objects.all()
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(blog_posts, 12)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     return render(request, 
                   'blogMainPage.html',
                   {
-                      'posts' : BlogPost.objects.all()
+                      'posts' : posts
                       
                   }
                 )

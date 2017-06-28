@@ -39,6 +39,9 @@ class Cost(models.Model):
     city = models.CharField(max_length=40)
     month = models.CharField(max_length=40, default='May')
 
+    def __str__(self):
+        return 'Cost: {}'.format(self.itemPurchased)
+
 ## this will keep track of how many miles I have gone, by what point, and at what time
 ## maybe eventually have something that says how long it has been since I have been on the road
 ## in days and whatnot

@@ -19,7 +19,7 @@ class PhotoAdminForm(forms.ModelForm):
 
 class PhotoAdmin(admin.ModelAdmin):
     form = PhotoAdminForm
-    list_display = ('title', 'admin_thumbnail')
+    list_display = ('title', 'admin_thumbnail', 'is_cover_photo')
 
     def get_urls(self):
         urls = super(PhotoAdmin, self).get_urls()

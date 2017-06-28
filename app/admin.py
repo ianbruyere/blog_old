@@ -19,10 +19,19 @@ class MapMarkerAdminForm(forms.ModelForm):
 
 class MapMarkerAdmin(admin.ModelAdmin):
     form = MapMarkerAdminForm
-    list_display = ('name', 'typeOfMarker', 'submittedBy')
+    list_display = ('name', 'typeOfMarker', 'submittedBy', 'alreadyVisited')
+
+class CostAdminForm(forms.ModelForm):
+    model = Cost
+    exclude = []
+
+class CostAdmin(admin.ModelAdmin):
+    form = CostAdminForm
+    list_display = ('cost', 'itemPurchased', 'category', 'month')
 
 admin.site.register(MapMarker, MapMarkerAdmin)
-admin.site.register(Cost)
+admin.site.register(Cost, CostAdmin)
+#admin.site.register(Cost)
 admin.site.register(DistanceDriven)
 admin.site.register(User)
 admin.site.register(Hiking)
