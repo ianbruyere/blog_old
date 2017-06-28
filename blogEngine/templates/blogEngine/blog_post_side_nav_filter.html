@@ -1,0 +1,37 @@
+<style>
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .sidenav {
+    height: 60%; /* 100% Full-height */
+    width: 15%; /* 0 width - change this with JavaScript */
+    z-index: 1; /* Stay on top */
+    top: 40%;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+    .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+    
+}
+</style>
+
+<div class="flex-container">
+<div id="mySidenav" class="sidenav">
+    {% for category in categories %}
+    <a href="{{category.get_absolute_url}}"> {{ category.title }}</a>
+    {% endfor %}
+</div>
+</div>

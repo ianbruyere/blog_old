@@ -131,10 +131,10 @@ input[type="checkbox"].input-validation-error {
 }
 
 .image-slide {
-    width: 80vh;
-    margin: 10vh;
+    max-width: 1000px;
+    max-height: 583px;
     position: relative;
-    max-width: 75%;
+    
 }
 
 .image-container {
@@ -195,6 +195,7 @@ input[type="checkbox"].input-validation-error {
 /*How the Actual Blog Post Is Displayed when selected for reading*/
 .post_flex_container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -203,4 +204,19 @@ input[type="checkbox"].input-validation-error {
 .post_flex_item {
     flex: 1 1 800px;
     max-width: 50%;
+}
+
+.div-tags {
+    flex: 1 1 auto;
+}
+
+.div-tags label {
+    font-size: 18px;
+}
+.div-tags a {
+    font-size: 18px;
+}
+
+#disqus_thread {
+    width: 800px !important;
 }

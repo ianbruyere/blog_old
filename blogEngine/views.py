@@ -17,7 +17,8 @@ def blogMainPage(request):
     return render(request, 
                   'blogMainPage.html',
                   {
-                      'posts' : posts
+                      'posts' : posts,
+                      'categories' : Category.objects.all()
                       
                   }
                 )

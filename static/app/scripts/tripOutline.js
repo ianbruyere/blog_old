@@ -1,5 +1,18 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     initMap();
+
+});
+
+var conditionalFields = $('#id_date').parent();
+conditionalFields.hide();
+
+$("#id_typeOfMarker").change(function () {
+    if ($(this).val() == 'Meet-Up') {
+        conditionalFields.show();
+    } else {
+        conditionalFields.hide()
+    }
 });
 
 function openTab(evt) {
@@ -76,7 +89,10 @@ function initMap() {
             markerColor = 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
         } else if (pointsData[i].fields.confirmed) {
             markerColor = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-        } else { markerColor = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png' }
+        } else if (pointsData[i].fields.typeOfMarker == 'Meet-Up') {
+            markerColor = 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+             }// this seems ugly if i change the wording of this category i have to remeber to change this as well
+        else { markerColor = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png' }
 
         marker = new google.maps.Marker({
             position: myLatLng,

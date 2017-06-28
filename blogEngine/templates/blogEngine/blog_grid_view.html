@@ -1,6 +1,8 @@
 ﻿<link rel="stylesheet" href="/static/blogEngine/content/blogEngine.css"/>
+
 <div class="blogMain">
   {% for post in posts %}
+    {% if post.public %}
     <div class="blogEntry">
         <div class="blogEntry-MetaInfo">
             <span class="metaInfo"><time class="time-date-blog-entry-posted" >{{post.datePosted}}</time> <i>by</i> Ian Bruyere</span>
@@ -19,6 +21,7 @@
           </p>
         </div>
     </div>
+    {% endif %}
   {% endfor %}
 </div>
 

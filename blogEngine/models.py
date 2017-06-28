@@ -14,6 +14,7 @@ class BlogPost(models.Model):
      datePosted = models.DateField(db_index=True, auto_now_add=True)
      categories = models.ManyToManyField('Category', 
                                   blank=True, default=None)
+     public = models.BooleanField(default=True)
 
      def __str__(self):
          return 'BlogPost: {}'.format(self.title)
