@@ -1,8 +1,21 @@
 ﻿{% extends 'app/layout.html' %}
 {% block content %}
 {% load photoEngine_tags %}
-<link rel="stylesheet" href="/static/app/content/photos.css" />
-             
-<img class="photo" src="{{MEDIA_URL}}{{photo.image.url}}" />
- 
+<link rel="stylesheet" href="/static/photoEngine/content/styles.css" />
+<div class="view-photos-container">
+  <div class="photo-container">              
+    <img class="photo"src="{{MEDIA_URL}}{{photo.image.url}}" />
+  </div>
+  <div class="table-container">
+    <table>
+      {% for album in photo.albums.all %}
+        <tr>
+          <td>{% previous_in_album photo album %}</td>
+          <td><a href="{{album.get_absolute_url }}">{{ album.title }}</a></td>
+          <td>{% next_in_album photo album %}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
 {% endblock %}

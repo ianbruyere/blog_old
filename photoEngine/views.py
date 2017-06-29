@@ -10,7 +10,7 @@ def photos(request):
     return render(
         request,
         'photos.html', {
-            'title' : 'Gallery',
+            'title' : 'Albums',
             'albums' : albums,
             }
         )
@@ -24,12 +24,9 @@ def view_album(request, slug):
 
         })
 
-def view_photo(request, slug):
+def view_photo(request, slug, currentAlbum=None):
     photo = get_object_or_404(Photo, slug=slug)
-    album = Album.objects.filter(photos=photo)
-
     return render(request,
                   'view_photo.html', {
                       'photo': photo,
-                      'album' : album
                       })

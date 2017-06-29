@@ -1,15 +1,19 @@
 {% extends 'app/layout.html' %}
 
 {% block content %}
-  <link rel="stylesheet" href="/static/app/content/photos.css" />
-  <h1>{{ title }}</h1>
-  <hr />
+  <link rel="stylesheet" href="/static/photoEngine/content/styles.css" />
+  
+  <br />
   {% load static %}
+<h1>{{ title }}</h1>
+<div class="gallery-container">
+    
   {% for album in albums %}
-    <div class="gallery">
+      <div class="gallery-item">
           <a target="_self" href="{{album.get_absolute_url}}">            
-             <div class="desc">{{album.title}}</div>
+             {{album.title}}
           </a>
-    </div>
+       </div>
   {% endfor %} <!--end of album for-->
+ </div>
 {% endblock %}

@@ -32,9 +32,12 @@ class Photo(models.Model):
             self.slug = slugify(self.title)
         super(Photo, self).save(*args, **kwargs)
 
+    def display_albums(self):
+        return self.album.all()
+
     def get_previous_in_album(self, album):
         """Find the neighbour of this photo in the supplied gallery."""
-        photos = album.photos()
+        photos = album.photos.all()
         if self not in photos:
             raise ValueError('Photo does not belong to gallery.')
         previous = None
@@ -46,7 +49,7 @@ class Photo(models.Model):
     def get_next_in_album(self, album):
         """Find the neighbour of this photo in the supplied gallery."""
 
-        photos = album.photos()
+        photos = album.photos.all()
         if self not in photos:
             raise ValueError('Photo does not belong to gallery.')
         matched = False
