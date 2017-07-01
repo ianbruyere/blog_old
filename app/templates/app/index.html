@@ -15,7 +15,8 @@
           <button class="display-right" onclick="plusDivs(+1)">&#10095;</button>-->
         </div>
     </div>
-{% include "blogEngine/blog_grid_view.html" %}
+{% load blogEngine_tags %}
+{% getBlogGridView 8 %}
 </div>
 
 {% block scripts %}

@@ -1,7 +1,6 @@
 ﻿{% extends 'app/layout.html' %}
 
 {% block content %}
-
-{% include "blogEngine/blog_grid_view.html"  %}
-<!--{% include "blogEngine/blog_post_side_nav_filter.html" %} -->
+{% load blogEngine_tags %}
+{% getBlogGridView 0 paginate=True %}
 {% endblock %}

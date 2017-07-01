@@ -37,7 +37,6 @@ def home(request):
             'title':'Home Page',
             'year':datetime.now().year,
             'images': Photo.objects.filter(is_cover_photo=True).order_by('date_added')[:4],
-            'posts' : BlogPost.objects.all()[:8]
         }
     )
 

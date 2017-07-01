@@ -4,8 +4,8 @@ $(document).ready(function () {
     populateAllMileageListItems()
     populateAllClimbs();
     populateAllHikes();
-    openTab(null, 'Cost');
     totalCostOfSelected();
+    $("#defaultOpen").click()
 });
 
 function populateAllMileageListItems() {
@@ -47,6 +47,7 @@ function populateAllListItems() {
             + cost +itemPurchased + category + state + month + '</tr>')
         ddlStateFilterarr.push(cost_json[i].fields.state);
         arrMonthFilter.push(cost_json[i].fields.month);
+
     }
     $($.unique(ddlStateFilterarr)).each(function (index, item) {
         $('#ddlState').append($('<option>').html(item));
