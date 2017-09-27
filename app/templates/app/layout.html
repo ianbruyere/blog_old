@@ -16,20 +16,6 @@
     <div class="wrapper">
         {% include 'app/loginpartial.html' %}
 {% block content %}{% endblock %}
-    </div>
-        <hr/>
-        <footer>
-            <div id="container_tracker" height="50px" width="100%">
-                <div id="moneySpent" >
-                   <p color="green"> <a href="{% url 'bythenumbers' %}">${{totalCost.cost__sum}}</a></p>
-                </div>
-                <div id="milesTraveled" >
-                    <p color="yellow"><a href="{% url 'bythenumbers' %}">{{totalDistance.cumulativeMilesTraveled__sum}}</a></p>
-                </div>
-            </div>
-            <!--<p>&copy; {{ year }} - My Django Application</p>-->
-        </footer>
-
 
     <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
     <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
