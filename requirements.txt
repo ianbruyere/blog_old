@@ -2,7 +2,7 @@ astroid==1.5.2
 botocore==1.5.55
 cement==2.8.2
 colorama==0.3.7
-Django==1.10.6
+Django==2.2.24
 django-photologue==3.7
 django-sortedm2m==1.4.0
 django-wysiwyg-redactor==0.5.1
